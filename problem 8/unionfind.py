@@ -12,9 +12,6 @@ class UnionFind:
         self.size += 1
 
     def path_compress_find(self, vertex):
-        if vertex == '361':
-            #breakpoint()
-            pass
         parent = self.parents[vertex]
         if parent == vertex:
             return vertex
@@ -37,9 +34,6 @@ class UnionFind:
             root = find(parent)
 
         for v in vertices_to_compress:
-            if v == '361':
-                #breakpoint()
-                pass
             self.parents[v] = root
 
         return root
@@ -51,18 +45,11 @@ class UnionFind:
         rank2 = self.ranks[root2]
 
         if rank1 > rank2:
-            if root2 == '361':
-                #breakpoint()
-                pass
             self.parents[root2] = root1
         elif rank2 > rank1:
-            if root1 == '361':
-                #breakpoint()
-                pass
+
             self.parents[root1] = root2
         else:
-            if root2 == '361':
-                #breakpoint()
-                pass
+
             self.parents[root2] = root1
             self.ranks[root1] += 1
